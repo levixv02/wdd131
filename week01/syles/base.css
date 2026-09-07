@@ -38,6 +38,10 @@ nav a{
     color: #fff;
 }
 
+main{
+    margin: 0 10px;
+}
+
 main h1{
     display: flex;
     justify-content: center;
