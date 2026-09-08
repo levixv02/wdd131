@@ -1,12 +1,11 @@
 *{
     list-style: none;
     text-decoration: none;
-
 }
 
-*,*::before,*::after {
+/* *,*::before,*::after {
 box-sizing: border-box;
-}
+} */
 
 body {
     margin: 20px 100px,
@@ -38,9 +37,9 @@ nav a{
     color: #fff;
 }
 
-main{
+/* main{
     margin: 0 10px;
-}
+} */
 
 main h1{
     display: flex;
@@ -63,7 +62,7 @@ main section {
     box-sizing: border-box;
     max-width: 100%;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 main section .city {
@@ -71,12 +70,20 @@ main section .city {
     justify-content: center;
     align-content: center;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
 main section .about {
     display:grid;
     grid-template-columns: repeat(2, 50%);
+    box-sizing: border-box;
     gap:5%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+main section .about .myimage img {
+    width: 50%;
 }
 
 main section .flag {
@@ -84,7 +91,6 @@ main section .flag {
     grid-template-columns: repeat(2, 50%);
     align-items: center;
     gap:5%;
-    box-sizing: border-box;
 }
 
 main section .flag img{
