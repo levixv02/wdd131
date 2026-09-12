@@ -1,11 +1,8 @@
 *{
-    list-style: none;
-    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Roboto", serif, Arial, Helvetica, sans-serif;
+    font-style: normal;
 }
-
-/* *,*::before,*::after {
-box-sizing: border-box;
-} */
 
 body {
     margin: 20px 100px,
@@ -29,17 +26,24 @@ nav{
     align-items: center;
     align-content: center;
     background-color: black;
-    padding: 10px 5px;
+    padding: 20px 5px;
     margin-top: 20px;
+    transition: 5s;
 }
 
 nav a{
     color: #fff;
+    text-decoration: none;
 }
 
-/* main{
-    margin: 0 10px;
-} */
+nav a:hover{
+    font-weight: bold;
+    background-color:  rgb(32, 32, 100);
+    padding: 5px;
+    text-decoration: underline;
+    border-radius: 15px;
+}
+
 
 main h1{
     display: flex;
@@ -49,16 +53,16 @@ main h1{
 
 main section h2{
     background-color: rgb(32, 32, 100);
-    padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     color:white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 main section {
-    border:2px solid black;
-    flex-wrap: nowrap;
     box-sizing: border-box;
     max-width: 100%;
     border-radius: 10px;
@@ -70,34 +74,67 @@ main section .city {
     justify-content: center;
     align-content: center;
     font-weight: bold;
-    box-sizing: border-box;
 }
 
 main section .about {
     display:grid;
-    grid-template-columns: repeat(2, 50%);
-    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
     gap:5%;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
-main section .about .myimage img {
-    width: 50%;
+.about .card1 h2{
+    grid-column: 1/-1;
+}
+.card1{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
 }
 
-main section .flag {
+.card1, .card2{
+    overflow: auto;
+    gap: 5px;
+    border:2px solid black;
+}
+
+.card1 .subcar1,.subcard2{
+    padding: 15px;
+}
+
+.card2 ul {
+    display: flex;
+    list-style: square;
+    flex-direction: column;
+}
+
+.subcard2 img {
+    max-width:80% ;
+    min-width: 40%;
+    height: auto;
+}
+
+.flag {
     display:grid;
     grid-template-columns: repeat(2, 50%);
     align-items: center;
-    gap:5%;
+    gap:3%;
 }
 
-main section .flag img{
+.flag {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap:3%;
+}
+
+.flag img{
     max-width: 100%;
     height: auto;
     display: block;
 }
+
 
 footer {
     background-color: rgb(32, 32, 100);
