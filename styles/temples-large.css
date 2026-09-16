@@ -1,0 +1,28 @@
+
+@media (min-width: 800px) {
+
+    .grid-temple {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (min-width: 1500px) {
+
+    .nav-toggle{
+        display: none;
+    }
+
+    .navbar-menu {
+    position: absolute;
+    display: flex;
+    float: left;
+
+    }
+
+    .grid-temple {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
