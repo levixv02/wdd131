@@ -157,7 +157,7 @@ footer p {
 
 
 
-@media (max-width: 1700px){
+@media (max-width: 999px){
     .nav-toggle {
     display: flex;
     flex-direction: column;
