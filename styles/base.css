@@ -103,10 +103,15 @@ main section .about {
     padding: 15px;
 }
 
+.card2{
+    position: relative;
+}
 .card2 ul {
+    position: absolute;
     display: flex;
     list-style: square;
     flex-direction: column;
+    top:150px;
 }
 
 .subcard2 img {
