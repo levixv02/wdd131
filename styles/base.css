@@ -5,7 +5,7 @@
 }
 
 body {
-    margin: 20px 100px,
+    margin: 20px,
 }
 
 body header {
@@ -44,7 +44,9 @@ nav a:hover{
     border-radius: 15px;
 }
 
-
+main {
+    margin: 5px 20px;
+}
 main h1{
     display: flex;
     justify-content: center;
