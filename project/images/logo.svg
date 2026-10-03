@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Explore DRCongo</title>
+  <desc id="desc">Logo touristique avec le nom Explore DRCongo au-dessus d'une illustration de montagnes, forêt et rivière.</desc>
+  <defs>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34B6D2"/><stop offset="1" stop-color="#087DA5"/></linearGradient>
+  </defs>
+  <text x="450" y="94" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700" letter-spacing="-2" fill="#183F35">Explore <tspan fill="#D99D2B">DRCongo</tspan></text>
+  <circle cx="450" cy="335" r="192" fill="#F4F7EF"/>
+  <circle cx="527" cy="220" r="47" fill="#F2B544"/>
+  <path d="M268 394 350 264l53 72 61-99 123 157v97H268z" fill="#557D53"/>
+  <path d="m326 292 24-28 27 34-20-8-12 9-10-8zM440 263l24-26 28 35-21-9-12 9-11-9z" fill="#F4F7EF"/>
+  <path d="M268 403c57-23 75 26 130 3 47-21 65-14 86 4 26 21 47 20 103-1v82H268z" fill="#2F6649"/>
+  <path d="M428 344c-18 28-35 45-34 68 2 23 32 34 33 55 1 16-13 29-27 45h48c19-20 28-37 23-56-6-23-33-35-34-55-1-17 13-32 27-57z" fill="url(#river)"/>
+  <path d="M296 494h308" stroke="#D7A342" stroke-width="5" stroke-linecap="round"/>
+</svg>
