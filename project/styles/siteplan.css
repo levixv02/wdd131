@@ -48,7 +48,6 @@ header ul li:hover{
     background-color: rgb(206, 190, 40);
 }
 
-
 header button{
     margin: 20px;
     font-size: 1.5rem;
@@ -82,7 +81,7 @@ main{
 }
 
 .hero .right button{
-    margin: 20px;
+    margin: 15px;
     font-size: 1.5rem;
     border: 1px solid rgba(92, 92, 92, 0.3);
     text-align: center;
