@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    max-width:800px;
+    margin:0 auto;
+}
+
+header{
+    background:#2f0035;
+    color:white;
+    padding:1rem;
+    text-align:center;
+}
+
+main{
+    background:#ece7ec;
+    margin:1rem 0;
+    padding:1.5rem;
+    border-radius:8px;
+}
+
+.product,
+.date,
+.reviewCount,
+.yourName,
+.features,
+.overall{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:1.5rem;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+textarea{
+    padding:.8rem;
+    margin-top:.5rem;
+    width:100%;
+}
+
+.rating-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating-container div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px;
+}
+
+.rating{
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+    margin-top:1rem;
+}
+
+
+.form-group {
+    margin: 10px 0;
+}
+
+.checkbox-group{
+    margin: 5px 0;
+}
+
+.features div{
+    margin:.3rem 0;
+}
+
+span {
+    font-style: italic;
+    color: rebeccapurple;
+}
+
+.submit-btn{
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+footer{
+    background:#2f0035;
+    color:white;
+    text-align:center;
+    padding:1.5rem;
+}
+
+
+/* review page */
+
+.confirmation {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.confirmation h2 {
+    color: #2e7d32;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #004c99;
+}
+
+
+/* media */
+
+@media (max-width: 600px){
+
+.rating{
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+}
+
