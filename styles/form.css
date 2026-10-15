@@ -1,4 +1,246 @@
+
+/* RESET */
+
 *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#4b006e;
+    --secondary:#f5f2f5;
+    --accent:#2d2d2d;
+    --success:#1b5e20;
+    --white:#ffffff;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #222222;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+/* HEADER */
+
+header{
+    background-color: var(--primary);
+    color: white;
+    text-align:center;
+    padding:1.2rem;
+    border-radius:0 0 8px 8px;
+}
+
+header h1{
+    font-size:1.8rem;
+}
+
+/* MAIN */
+
+main{
+    background-color: var(--secondary);
+    margin:1rem 0;
+    padding:1.5rem;
+    border-radius:8px;
+}
+
+/* FORM GROUPS */
+
+.product,
+.date,
+.reviewCount,
+.yourName,
+.features,
+.overall{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:1.5rem;
+}
+
+label{
+    font-weight:600;
+    margin-bottom:.4rem;
+}
+
+/* FORM ELEMENTS */
+
+select,
+input[type="text"],
+input[type="date"],
+textarea{
+    width:100%;
+    padding:.8rem;
+    border:1px solid #999;
+    border-radius:4px;
+    font-size:1rem;
+}
+
+/* ACCESSIBILITY */
+
+select:focus,
+input:focus,
+textarea:focus{
+    outline:3px solid #005fcc;
+    outline-offset:2px;
+}
+
+/* RATING */
+
+.rating-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.rating-container div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.rating{
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    margin-top:1rem;
+    text-align:center;
+}
+
+.form-group{
+    margin:10px 0;
+}
+
+/* FEATURES */
+
+.checkbox-group{
+    margin:8px 0;
+}
+
+.features div{
+    margin:.4rem 0;
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+    margin-right:.4rem;
+}
+
+/* OPTIONAL TEXT */
+
+.optional{
+    font-style:italic;
+    color:#4b006e;
+    font-size:.9rem;
+}
+
+/* SUBMIT BUTTON */
+
+.submit-btn{
+    width:100%;
+    padding:1rem;
+    border:none;
+    background-color:var(--primary);
+    color:white;
+    font-size:1.1rem;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background-color:#380052;
+}
+
+.submit-btn:focus{
+    outline:3px solid #005fcc;
+}
+
+/* FOOTER */
+
+footer{
+    background-color:var(--primary);
+    color:white;
+    text-align:center;
+    padding:1.5rem;
+    border-radius:8px 8px 0 0;
+}
+
+footer p{
+    margin:.3rem 0;
+}
+
+/* REVIEW PAGE */
+
+.confirmation{
+    max-width:600px;
+    margin:2rem auto;
+    padding:2rem;
+    text-align:center;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+}
+
+.confirmation h2{
+    color:var(--success);
+    margin-bottom:1rem;
+}
+
+.confirmation p{
+    margin:.8rem 0;
+}
+
+.button{
+    display:inline-block;
+    margin-top:1rem;
+    padding:.8rem 1.5rem;
+    background-color:#005fcc;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.button:hover{
+    background-color:#0046a3;
+}
+
+.button:focus{
+    outline:3px solid #005fcc;
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+
+    main{
+        padding:1rem;
+    }
+
+    .rating{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .rating-container{
+        gap:.5rem;
+    }
+
+    header h1{
+        font-size:1.4rem;
+    }
+}
+
+
+
+/* *{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -98,7 +340,7 @@ footer{
 }
 
 
-/* review page */
+/* review page *
 
 .confirmation {
     max-width: 600px;
@@ -129,7 +371,7 @@ footer{
 }
 
 
-/* media */
+/* media *
 
 @media (max-width: 600px){
 
@@ -139,4 +381,4 @@ footer{
 }
 
 }
-
+ */
