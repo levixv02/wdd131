@@ -304,11 +304,11 @@ figcaption{
     border:3px solid var(--accent);
 }
 
-.price-card h3{
+.price-card h2{
     color:var(--primary);
 }
 
-.price-card h4{
+.price-card h3{
     font-size:2rem;
     color:var(--accent);
     margin:1rem 0;
@@ -359,6 +359,12 @@ figcaption{
 
 }
 
+.reviews .title{
+    text-align: center;
+    font-size:2rem;
+    color:var(--primary);
+
+}
 .stars{
     color:gold;
     font-size:2rem;
