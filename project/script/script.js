@@ -35,6 +35,18 @@ if (menuButton) {
 
 }
 
+
+// Reserve Boutton
+const reserveBtn = document.querySelector("#reserveBtn");
+
+reserveBtn.addEventListener("click", () => {
+
+    document.querySelector("#contact").scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
 // CLOSE MENU AFTER CLICK
 
 const navLinks = document.querySelectorAll(".navigation a");
