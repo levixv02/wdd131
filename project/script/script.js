@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // MOBILE MENU
-
+// 
 const menuButton = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
 
@@ -264,3 +264,4 @@ const randomQuote =
     quotes[Math.floor(Math.random() * quotes.length)];
 
 console.log(randomQuote);
+
