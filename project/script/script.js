@@ -1,267 +1,347 @@
-// CURRENT YEAR
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const yearElement = document.querySelector("#currentyear");
+    /* =====================================
+       CURRENT YEAR
+    ===================================== */
 
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+    const currentYear = document.querySelector("#currentyear");
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
     }
 
-});
+    /* =====================================
+       MOBILE MENU
+    ===================================== */
 
-// MOBILE MENU
-// 
-const menuButton = document.querySelector(".menu-btn");
-const navigation = document.querySelector(".navigation");
+    const menuButton = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
 
-if (menuButton) {
+    if (menuButton && navigation) {
 
-    menuButton.addEventListener("click", () => {
+        menuButton.addEventListener("click", () => {
 
-        navigation.classList.toggle("show");
+            navigation.classList.toggle("show");
 
-        const icon = menuButton.querySelector("i");
+            const icon = menuButton.querySelector("i");
 
-        if (navigation.classList.contains("show")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
+            if (navigation.classList.contains("show")) {
+                icon.classList.replace("fa-bars", "fa-xmark");
+            } else {
+                icon.classList.replace("fa-xmark", "fa-bars");
+            }
+
+        });
+
+    }
+
+    /* =====================================
+       CLOSE MOBILE MENU
+    ===================================== */
+
+    document.querySelectorAll(".navigation a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                if (navigation) {
+                    navigation.classList.remove("show");
+                }
+
+                if (menuButton) {
+
+                    const icon =
+                        menuButton.querySelector("i");
+
+                    if (icon) {
+                        icon.classList.remove("fa-xmark");
+                        icon.classList.add("fa-bars");
+                    }
+                }
+
+            });
+
+        });
+
+    /* =====================================
+       RESERVE BUTTON
+    ===================================== */
+
+    const reserveBtn =
+        document.querySelector("#reserveBtn");
+
+    const contactSection =
+        document.querySelector("#contact");
+
+    if (reserveBtn && contactSection) {
+
+        reserveBtn.addEventListener("click", () => {
+
+            contactSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+    /* =====================================
+       VISIT COUNTER
+    ===================================== */
+
+    let visits =
+        Number(localStorage.getItem("visitCounter")) || 0;
+
+    visits++;
+
+    localStorage.setItem(
+        "visitCounter",
+        visits
+    );
+
+    const visitCounter =
+        document.querySelector("#visit-counter");
+
+    if (visitCounter) {
+
+        visitCounter.textContent =
+            `Website Visits: ${visits}`;
+
+    }
+
+    /* =====================================
+       BOOKING FORM
+    ===================================== */
+
+    const bookingForm =
+        document.querySelector("#bookingForm");
+
+    if (bookingForm) {
+
+        bookingForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+            const travelerName =
+                document.querySelector("#name")?.value;
+
+            alert(
+                `Thank you ${travelerName}! Your reservation request has been successfully submitted.`
+            );
+
+            bookingForm.reset();
+
+        });
+
+    }
+
+    /* =====================================
+       DESTINATION SELECT
+    ===================================== */
+
+    const destinationSelect =
+        document.querySelector(
+            "#bookingForm select"
+        );
+
+    const bookingButton =
+        document.querySelector(
+            "#bookingForm button"
+        );
+
+    if (destinationSelect && bookingButton) {
+
+        destinationSelect.addEventListener("change", () => {
+
+            const destination =
+                destinationSelect.options[
+                    destinationSelect.selectedIndex
+                ].text;
+
+            bookingButton.textContent =
+                `Reserve ${destination}`;
+
+        });
+
+    }
+
+    /* =====================================
+       NEWSLETTER
+    ===================================== */
+
+    const newsletterButton =
+        document.querySelector(".newsletter button");
+
+    if (newsletterButton) {
+
+        newsletterButton.addEventListener("click", () => {
+
+            const emailInput =
+                document.querySelector(
+                    ".newsletter input[type='email']"
+                );
+
+            if (
+                !emailInput ||
+                emailInput.value.trim() === ""
+            ) {
+
+                alert(
+                    "Please enter a valid email address."
+                );
+
+                return;
+            }
+
+            alert(
+                "Thank you for subscribing to Explore DRCongo!"
+            );
+
+            emailInput.value = "";
+
+        });
+
+    }
+
+    /* =====================================
+       SCROLL REVEAL
+    ===================================== */
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+    document.querySelectorAll("section")
+        .forEach(section => {
+
+            section.classList.add("hidden");
+
+            observer.observe(section);
+
+        });
+
+    /* =====================================
+       BACK TO TOP BUTTON
+    ===================================== */
+
+    const backTopButton =
+        document.createElement("button");
+
+    backTopButton.classList.add("back-top");
+
+    backTopButton.innerHTML =
+        '<i class="fa-solid fa-arrow-up"></i>';
+
+    document.body.appendChild(backTopButton);
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            backTopButton.classList.add("show");
+
         } else {
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
+
+            backTopButton.classList.remove("show");
+
         }
 
     });
 
-}
+    backTopButton.addEventListener("click", () => {
 
-
-// Reserve Boutton
-const reserveBtn = document.querySelector("#reserveBtn");
-
-reserveBtn.addEventListener("click", () => {
-
-    document.querySelector("#contact").scrollIntoView({
-        behavior: "smooth"
-    });
-
-});
-
-// CLOSE MENU AFTER CLICK
-
-const navLinks = document.querySelectorAll(".navigation a");
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navigation.classList.remove("show");
-
-        const icon = menuButton.querySelector("i");
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     });
 
-});
+    /* =====================================
+       CARD EFFECTS
+    ===================================== */
 
-// VISIT COUNTER
+    document.querySelectorAll(".card")
+        .forEach(card => {
 
-let visits = Number(localStorage.getItem("visitCounter")) || 0;
+            card.addEventListener("mouseenter", () => {
 
-visits++;
+                card.style.boxShadow =
+                    "0 15px 30px rgba(0,0,0,.20)";
 
-localStorage.setItem("visitCounter", visits);
+            });
 
-const visitCounter = document.querySelector("#visit-counter");
+            card.addEventListener("mouseleave", () => {
 
-if (visitCounter) {
-    visitCounter.textContent =
-        `Website Visits: ${visits}`;
-}
+                card.style.boxShadow =
+                    "0 5px 15px rgba(0,0,0,.10)";
 
-// BOOKING FORM
+            });
 
-const bookingForm = document.querySelector("#bookingForm");
+        });
 
-if (bookingForm) {
+    /* =====================================
+       RANDOM TRAVEL QUOTE
+    ===================================== */
 
-    bookingForm.addEventListener("submit", (event) => {
+    const quotes = [
+        "Adventure awaits in every corner of the Congo.",
+        "Travel far enough to discover yourself.",
+        "Explore nature, discover culture, create memories.",
+        "Every destination tells a story.",
+        "The Democratic Republic of the Congo is full of wonders."
+    ];
 
-        event.preventDefault();
+    const randomQuote =
+        quotes[
+            Math.floor(
+                Math.random() * quotes.length
+            )
+        ];
 
-        const name =
-            document.querySelector("#name").value;
+    console.log(randomQuote);
 
-        alert(
-            `Thank you ${name}! Your reservation request has been received.`
-        );
+    /* =====================================
+       ACTIVE PAGE
+    ===================================== */
 
-        bookingForm.reset();
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop();
 
-    });
+    document.querySelectorAll(".navigation a")
+        .forEach(link => {
 
-}
+            const href =
+                link.getAttribute("href");
 
-// NEWSLETTER
+            if (href === currentPage) {
 
-const newsletterButton =
-    document.querySelector(".newsletter button");
-
-if (newsletterButton) {
-
-    newsletterButton.addEventListener("click", () => {
-
-        const email =
-            document.querySelector(".newsletter input[type='email']");
-
-        if (email.value.trim() === "") {
-
-            alert("Please enter your email address.")
-            return;
-        }
-
-        alert(
-            "Thank you for subscribing to Explore DRCongo!"
-        );
-
-        email.value = "";
-
-    });
-
-}
-
-// DESTINATION SELECT
-
-const destinationSelect =
-    document.querySelector("select");
-
-const reserveButton =
-    document.querySelector("#bookingForm button");
-
-if (destinationSelect) {
-
-    destinationSelect.addEventListener("change", () => {
-
-        reserveButton.textContent =
-            `Reserve ${destinationSelect.options[destinationSelect.selectedIndex].text}`;
-
-    });
-
-}
-
-// SCROLL ANIMATIONS
-
-const observer = new IntersectionObserver(
-
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
+                link.classList.add("active");
 
             }
 
         });
 
-    },
-
-    {
-        threshold: 0.2
-    }
-
-);
-
-const sections =
-    document.querySelectorAll("section");
-
-sections.forEach(section => {
-
-    section.classList.add("hidden");
-
-    observer.observe(section);
-
 });
-
-// BACK TO TOP BUTTON
-
-const backTopButton =
-    document.createElement("button");
-
-backTopButton.innerHTML =
-    '<i class="fa-solid fa-arrow-up"></i>';
-
-backTopButton.classList.add("back-top");
-
-document.body.appendChild(backTopButton);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 500) {
-
-        backTopButton.style.display = "block";
-
-    } else {
-
-        backTopButton.style.display = "none";
-
-    }
-
-});
-
-backTopButton.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-// DESTINATION CARDS HOVER MESSAGE
-
-const destinationCards =
-    document.querySelectorAll(".card");
-
-destinationCards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.boxShadow =
-            "0 10px 25px rgba(0,0,0,.25)";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.boxShadow =
-            "0 5px 15px rgba(0,0,0,.1)";
-
-    });
-
-});
-
-// RANDOM TRAVEL QUOTE
-
-const quotes = [
-
-    "Adventure awaits in every corner of the Congo.",
-
-    "Travel far enough to discover yourself.",
-
-    "Explore nature, discover culture, create memories.",
-
-    "Every destination tells a story.",
-
-    "The Democratic Republic of the Congo is full of wonders."
-
-];
-
-const randomQuote =
-    quotes[Math.floor(Math.random() * quotes.length)];
-
-console.log(randomQuote);
-

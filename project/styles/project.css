@@ -1,3 +1,769 @@
+/* ==========================================
+   COMMON STYLES
+========================================== */
+
+/* Color Variables */
+
+:root{
+    --primary:#16423C;
+    --secondary:#C4DAD2;
+    --accent:#DDA853;
+    --white:#FFFFFF;
+    --light:#F4F7F6;
+    --dark:#222222;
+}
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Roboto", sans-serif;
+    list-style:none;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--white);
+    color:var(--dark);
+    line-height:1.7;
+}
+
+main{
+    margin:10px 5%;
+}
+
+/* Global Section */
+
+section{
+    padding:5rem 8%;
+}
+
+section h2{
+    text-align:center;
+    color:var(--primary);
+    font-size:1.5rem;
+    margin-bottom:1rem;
+}
+
+/* Header */
+
+header{
+    background:var(--primary);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 4rem;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+header img{
+    width:100px;
+}
+
+/* Navigation */
+
+.navigation{
+    display:flex;
+    gap:1rem;
+}
+
+.navigation li{
+    border:1px solid var(--accent);
+    padding:5px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.navigation li:hover{
+    transform:scale(1.05);
+    background:var(--accent);
+}
+
+.navigation a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.navigation a.active{
+    color:white;
+}
+
+/* Buttons */
+
+.reserve-btn{
+    border:none;
+    background:var(--accent);
+    color:white;
+    padding:.8rem 1.2rem;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.reserve-btn:hover{
+    background:#c89037;
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:none;
+    color:white;
+    font-size:1.6rem;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:var(--primary);
+    color:white;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:2rem;
+    padding:4rem 8%;
+}
+
+.footer-container h3{
+    margin-bottom:1rem;
+}
+
+.footer-about h3{
+    color:var(--accent);
+}
+
+.footer-container a{
+    color:white;
+    text-decoration:none;
+}
+
+.footer-container a:hover{
+    color:var(--accent);
+}
+
+.icons{
+    display:flex;
+    gap:1rem;
+    font-size:1.5rem;
+}
+
+.icons i:hover{
+    color:var(--accent);
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:1.5rem;
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* Scroll Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Accessibility */
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+}
+
+/* Back To Top Button
+
+.back-top{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:var(--accent);
+    color:white;
+    cursor:pointer;
+    z-index:999;
+} */
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+.back-top{
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--accent);
+    color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+/* Visible state */
+
+.back-top.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hover effect */
+
+.back-top:hover{
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Click effect */
+
+.back-top:active{
+    transform: scale(.95);
+}
+
+/* Icon animation */
+
+.back-top i{
+    transition: transform .3s ease;
+}
+
+.back-top:hover i{
+    transform: translateY(-3px);
+}
+
+/* Mobile optimization */
+
+@media (max-width: 768px){
+
+    .back-top{
+        width: 50px;
+        height: 50px;
+
+        bottom: 20px;
+        right: 15px;
+
+        font-size: 1rem;
+    }
+
+}
+
+/* ==========================================
+   INDEX PAGE
+========================================== */
+/* Hero Section */
+
+.hero{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    align-items:center;
+    gap:10px;
+    padding:10px 5%;
+}
+
+/* LEFT SIDE */
+
+.left{
+    position:relative;
+    width:100%;
+    max-width:550px;
+    height:600px;
+    margin:auto;
+}
+
+/* COMMON IMAGE STYLE */
+
+.left img{
+    position:absolute;
+    width:320px;
+    height: 80%;
+    object-fit:cover;
+    border-radius:30px;
+    border:8px solid #fff;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    transition:.5s ease;
+}
+
+/* FIRST IMAGE */
+
+.image02{
+    top:20px;
+    left:10px;
+
+    transform:rotate(-8deg);
+
+    z-index:1;
+}
+
+/* SECOND IMAGE */
+
+.image01{
+    top:100px;
+    left:180px;
+    transform:rotate(8deg);
+    z-index:2;
+}
+
+/* HOVER EFFECTS */
+
+.image01:hover{
+    transform:
+        rotate(-2deg)
+        scale(1.05);
+
+    z-index:10;
+}
+
+.image02:hover{
+    transform:
+        rotate(2deg)
+        scale(1.05);
+
+    z-index:10;
+}
+
+/* RIGHT SIDE */
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subtitle{
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:.9rem;
+}
+
+.right h1{
+    font-size:4.5rem;
+    line-height:1.1;
+    margin:.5rem 0 1rem;
+    text-align: center;
+    color:var(--primary);
+}
+.right span{
+    line-height:1.1;
+    margin:.5rem 0 1rem;
+    text-align: center;
+    color:var(--accent);
+}
+
+.right p{
+    font-size:1.1rem;
+    color:#555;
+    line-height:1.8;
+    margin-bottom:2rem;
+    text-align: justify;
+}
+
+.hero-btn{
+    background: var(--primary);
+    color:white;
+    border:none;
+    padding:1rem 2rem;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:var(--accent);
+    transform:
+        translateY(-5px);
+}
+
+/* Review Section */
+
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:2rem;
+}
+
+.review-card{
+    padding:1rem;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.review-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.stars{
+    color:gold;
+    font-size:2rem;
+}
+
+.raison p{
+    text-align: center;
+}
+
+/* Newsletter */
+
+.newsletter{
+    text-align:center;
+    background:var(--light);
+    border-radius:20px;
+}
+
+.newsletter-form{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:2rem;
+}
+
+.newsletter-form input{
+    padding:1rem;
+    width:280px;
+}
+
+.newsletter-form button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:1rem 2rem;
+}
+
+
+@media(max-width:1100px){
+    .hero{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .left{
+        height: 410px;
+    }
+}
+
+/* ==========================================
+   DESTINATIONS PAGE
+========================================== */
+
+/* Banner */
+
+.page-banner{
+    background:linear-gradient(
+    rgba(22,66,60,.85),
+    rgba(22,66,60,.85)),
+    url("../images/kinshasa.jpg");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:5rem 2rem;
+    border-radius:20px;
+}
+
+.page-banner h1{
+    font-size:3rem;
+}
+
+/* Destination Cards */
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:2rem;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:1.5rem;
+}
+
+/* Attractions */
+
+.attractions{
+    margin-top:3rem;
+}
+
+/* Infinite Destination Slider */
+
+.discover-more{
+    background:var(--primary);
+    color:white;
+}
+
+.discover-more h2{
+    color:white;
+}
+
+.marquee{
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.marquee-content{
+    display:inline-block;
+    animation:scroll 25s linear infinite;
+}
+
+.marquee-content span{
+    margin-right:60px;
+}
+
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* ==========================================
+   BOOKING PAGE
+========================================== */
+
+/* Pricing Section */
+
+.pricing{
+    background:var(--light);
+}
+
+.pricing-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.price-card{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-10px);
+}
+
+.price-card h3{
+    color:var(--accent);
+    font-size:2rem;
+}
+
+/* Featured Package */
+
+.featured{
+    position:relative;
+    border:3px solid var(--accent);
+    overflow:hidden;
+}
+
+.featured::before{
+    content:"POPULAR";
+    position:absolute;
+    top:15px;
+    right:-40px;
+    width:160px;
+    padding:.4rem;
+    background:var(--accent);
+    color:white;
+    text-align:center;
+    transform:rotate(45deg);
+}
+
+/* Booking Form */
+
+.contact{
+    background:var(--light);
+    border-radius:20px;
+}
+
+#bookingForm{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    max-width:800px;
+    margin:auto;
+}
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea{
+    width:100%;
+    padding:1rem;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+#bookingForm textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+#bookingForm button{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:1rem;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#bookingForm button:hover{
+    background:var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCROLL ANIMATION *
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* BACK TO TOP *
+
+.back-top{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--accent);
+    color:white;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    font-size:1.2rem;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s ease;
+}
+
+.back-top:hover{
+    background:var(--primary);
+    transform:translateY(-3px);
+}
+
+
+
+
+
+/*
 :root{
     --primary:#16423C;
     --secondary:#C4DAD2;
@@ -13,6 +779,7 @@
     box-sizing:border-box;
     font-family: "Roboto", sans-serif;
     outline: none;
+    list-style: none;
 }
 
 html{
@@ -29,7 +796,7 @@ main{
     margin: 10px 5%;
 }
 
-/* HEADER */
+/* HEADER 
 
 header{
     background:var(--primary);
@@ -95,7 +862,7 @@ header img{
     font-size:1.6rem;
     cursor:pointer;
 }
-/* HERO */
+/* HERO *
 
 .hero{
     display:grid;
@@ -105,7 +872,7 @@ header img{
     padding:10px 5%;
 }
 
-/* LEFT SIDE */
+/* LEFT SIDE *
 
 .left{
     position:relative;
@@ -115,7 +882,7 @@ header img{
     margin:auto;
 }
 
-/* COMMON IMAGE STYLE */
+/* COMMON IMAGE STYLE *
 
 .left img{
     position:absolute;
@@ -128,7 +895,7 @@ header img{
     transition:.5s ease;
 }
 
-/* FIRST IMAGE */
+/* FIRST IMAGE *
 
 .image02{
     top:20px;
@@ -139,7 +906,7 @@ header img{
     z-index:1;
 }
 
-/* SECOND IMAGE */
+/* SECOND IMAGE *
 
 .image01{
     top:100px;
@@ -150,7 +917,7 @@ header img{
     z-index:2;
 }
 
-/* HOVER EFFECTS */
+/* HOVER EFFECTS *
 
 .image01:hover{
     transform:
@@ -168,7 +935,7 @@ header img{
     z-index:10;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE *
 
 .right{
     display: flex;
@@ -206,7 +973,7 @@ header img{
     text-align: justify;
 }
 
-.right button{
+.hero-btn{
     background: var(--primary);
     color:white;
     border:none;
@@ -218,13 +985,13 @@ header img{
     transition:.3s;
 }
 
-.right button:hover{
+.hero-btn:hover{
     background:var(--accent);
     transform:
         translateY(-5px);
 }
 
-/* SECTIONS */
+/* SECTIONS *
 
 section{
     padding:5rem 8%;
@@ -244,7 +1011,7 @@ figcaption{
     margin-bottom:3rem;
 }
 
-/* DESTINATIONS */
+/* DESTINATIONS *
 
 .card-container{
     display:grid;
@@ -279,7 +1046,7 @@ figcaption{
     margin-bottom:.7rem;
 }
 
-/* PRICING */
+/* PRICING *
 
 .pricing{
     background:var(--light);
@@ -332,7 +1099,7 @@ figcaption{
     cursor:pointer;
 }
 
-/* REVIEWS */
+/* REVIEWS *
 
 .review-container{
     display:grid;
@@ -379,7 +1146,7 @@ figcaption{
     color:var(--primary);
 }
 
-/* MARQUEE */
+/* MARQUEE *
 
 .discover-more{
     background:var(--primary);
@@ -417,14 +1184,14 @@ figcaption{
     }
 }
 
-/* CONTACT  & NEWSLETTER */
+/* CONTACT  & NEWSLETTER *
 
 .contactNews{
     display: grid;
     grid-template-columns: repeat(2, 1fr)
 }
 
-/* CONTACT */
+/* CONTACT *
 
 .contact{
     background:var(--light);
@@ -457,7 +1224,7 @@ figcaption{
     font-weight:600;
 }
 
-/* NEWSLETTER */
+/* NEWSLETTER *
 
 .newsletter{
     text-align:center;
@@ -492,7 +1259,7 @@ figcaption{
     cursor:pointer;
 }
 
-/* FOOTER */
+/* FOOTER *
 
 footer{
     background:var(--primary);
@@ -556,13 +1323,13 @@ footer{
 }
 
 
-/* MOBILE FLOATING RESERVE BUTTON */
+/* MOBILE FLOATING RESERVE BUTTON *
 
     .mobile-reserve{
     display:none;
 }
 
-/* TABLET */
+/* TABLET *
 
 @media(max-width:1100px){
     .hero{
@@ -582,7 +1349,7 @@ footer{
     /* .hero{
         grid-template-columns:1fr;
         text-align:center;
-    } */
+    } *
 
     .right p{
         margin:auto;
@@ -603,7 +1370,7 @@ footer{
 
 }
 
-/* MOBILE */
+/* MOBILE *
 
 @media(max-width:750px){
 
@@ -633,7 +1400,7 @@ footer{
 
     /* .hero{
         padding:3rem 5%;
-    } */
+    } *
 
     .left img{
         height:300px;
@@ -650,7 +1417,7 @@ footer{
     header .reserve-btn{
         display:none;
     }
-    /* MOBILE FLOATING RESERVE BUTTON */
+    /* MOBILE FLOATING RESERVE BUTTON *
 
     .mobile-reserve{
     display:none;
@@ -716,7 +1483,7 @@ footer{
 }
 
 
-/* SCROLL ANIMATION */
+/* SCROLL ANIMATION *
 
 .hidden{
     opacity:0;
@@ -731,7 +1498,7 @@ footer{
 
 }
 
-/* BACK TO TOP */
+/* BACK TO TOP *
 
 .back-top{
     position:fixed;
@@ -765,4 +1532,353 @@ footer{
 .back-top:hover{
     background:var(--primary);
     transform:translateY(-3px);
+}
+
+
+
+/* =========================
+   PAGE BANNER
+========================= *
+
+.page-banner{
+    background: linear-gradient(
+        rgba(22,66,60,.85),
+        rgba(22,66,60,.85)
+    ),
+    url("../images/kinshasa.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+
+    text-align:center;
+
+    padding:5rem 2rem;
+
+    border-radius:20px;
+
+    margin:2rem 0 4rem;
+}
+
+.page-banner h1{
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+
+.page-banner p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+/* =========================
+   DESTINATION PAGE
+========================= *
+
+.card-content{
+    padding:1.5rem;
+}
+
+.card-content h2{
+    color:var(--primary);
+    margin-bottom:.8rem;
+}
+
+.card-content p{
+    color:#666;
+}
+
+.card img{
+    display:block;
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+/* =========================
+   ATTRACTIONS SECTION
+========================= *
+
+.attractions{
+    margin-top:3rem;
+}
+
+.attractions .price-card{
+    min-height:220px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* =========================
+   BOOKING PAGE
+========================= *
+
+.contact{
+    background:var(--light);
+    border-radius:20px;
+}
+
+#bookingForm{
+    max-width:800px;
+    margin:auto;
+}
+
+#bookingForm textarea{
+    padding:1rem;
+    border:1px solid #ccc;
+    border-radius:10px;
+    resize:vertical;
+    min-height:140px;
+    font-size:1rem;
+}
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea{
+    width:100%;
+}
+
+#bookingForm button{
+    transition:.3s;
+}
+
+#bookingForm button:hover{
+    background:var(--primary);
+}
+
+/* =========================
+   PACKAGE CARDS
+========================= *
+
+.price-card{
+    transition:.3s ease;
+}
+
+.price-card:hover{
+    transform:translateY(-10px);
+}
+
+.featured{
+    position:relative;
+    overflow:hidden;
+}
+
+.featured::before{
+
+    content:"POPULAR";
+
+    position:absolute;
+
+    top:15px;
+    right:-40px;
+
+    width:160px;
+
+    text-align:center;
+
+    padding:.4rem;
+
+    background:var(--accent);
+
+    color:white;
+
+    font-size:.8rem;
+
+    font-weight:bold;
+
+    transform:rotate(45deg);
+}
+
+/* =========================
+   NEWSLETTER
+========================= *
+
+.newsletter{
+    background:var(--light);
+    border-radius:20px;
+}
+
+.newsletter-form{
+    max-width:600px;
+    margin:auto;
+}
+
+/* =========================
+   REFERENCES PAGE
+========================= *
+
+.references{
+    max-width:900px;
+    margin:auto;
+    padding:4rem 2rem;
+}
+
+.references h1{
+    color:var(--primary);
+    margin-bottom:2rem;
+    text-align:center;
+}
+
+.references ul{
+    line-height:2;
+}
+
+.references li{
+    margin-bottom:1rem;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= *
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus{
+
+    outline:3px solid var(--accent);
+
+    outline-offset:3px;
+}
+
+/* IMPORTANT:
+   REMOVE outline:none
+   FROM YOUR UNIVERSAL SELECTOR
+*/
+
+/* =========================
+   FOOTER LINKS
+========================= *
+
+.footer-container a{
+    transition:.3s;
+}
+
+.footer-container a:hover{
+    color:var(--accent);
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= *
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   BACK TO TOP
+========================= *
+
+.back-top{
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--accent);
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    font-size:1.2rem;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.back-top:hover{
+    background:var(--primary);
+    transform:translateY(-4px);
+}
+
+/* =========================
+   TABLET
+========================= *
+
+@media screen and (max-width:900px){
+
+    .page-banner h1{
+        font-size:2.5rem;
+    }
+
+    .pricing-container,
+    .review-container,
+    .card-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= *
+
+@media screen and (max-width:768px){
+
+    .page-banner{
+        padding:3rem 1rem;
+    }
+
+    .page-banner h1{
+        font-size:2rem;
+    }
+
+    .pricing-container,
+    .card-container,
+    .review-container{
+        grid-template-columns:1fr;
+    }
+
+    #bookingForm{
+        width:100%;
+    }
+
+    .featured::before{
+        right:-50px;
+        width:180px;
+    }
+
+}
+
+@media screen and (max-width:500px){
+
+    .page-banner h1{
+        font-size:1.7rem;
+    }
+
+    .page-banner p{
+        font-size:1rem;
+    }
+
+}
+
+
+.navigation a.active{
+    background: var(--accent);
+    color: white;
 }
