@@ -1,0 +1,195 @@
+/* Global styles */
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", serif, Arial, Helvetica, sans-serif;
+}
+
+/* Page body */
+body {
+    margin: 20px,
+}
+
+
+/* Header background */
+body header {
+    background-color: rgb(32, 32, 100);
+}
+
+/* Header text styling */
+body header span {
+    padding: 10px;
+    color:#fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Navigation bar */
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background-color: black;
+    padding: 15px 5px;
+    margin-top: 20px;
+    transition: .2s;
+}
+
+
+/* Navigation links */
+nav ul li {
+    list-style: none;
+    padding: 10px;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navigation hover effect */
+nav li:hover{
+    font-weight: bold;
+    background-color:  rgb(32, 32, 100);
+    border-radius: 5px;
+}
+
+/* Main content area */
+main {
+    margin: 5px 20px;
+}
+
+/* Main title */
+main h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Section title */
+main section h2{
+    background-color: rgb(32, 32, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Section container */
+main section {
+    box-sizing: border-box;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* City name styling */
+main section .city {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+}
+
+
+/* About section layout */
+main section .about {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    gap:5%;
+    padding: 0 20px;
+}
+
+
+/* Card title spans full width */
+.about .card1 h2{
+    grid-column: 1/-1;
+}
+
+/* First card grid layout */
+.card1{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+
+/* Card container styling */
+.card1, .card2{
+    overflow: auto;
+    gap: 5px;
+    border:2px solid black;
+}
+
+
+/* Card content padding */
+.card1 .subcard1,.subcard2{
+    padding: 15px;
+}
+
+
+/* Second card positioning */
+.card2{
+    position: relative;
+}
+
+/* Card list styling */
+.card2 ul {
+    position: absolute;
+    display: flex;
+    list-style: square;
+    flex-direction: column;
+    top:150px;
+}
+
+
+/* Image inside subcard */
+.subcard2 img {
+    max-width:80% ;
+    min-width: 40%;
+    height: auto;
+}
+
+/* Flag section layout */
+.flag {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap:3%;
+}
+
+/* Flag image styling */
+.flag img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.flag .image p{
+    font-style: italic;
+    font-size: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Footer styling */
+footer {
+    background-color: rgb(32, 32, 100);
+    color:#fff;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
