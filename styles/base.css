@@ -14,7 +14,7 @@ header {
     background-color: rgb(32, 32, 100);
 }
 
-header p {
+header span {
     display: flex;
     justify-content: center;
     align-items: center;
