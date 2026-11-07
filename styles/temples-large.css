@@ -1,0 +1,37 @@
+/* =========================
+   TABLET LAYOUT
+========================= */
+@media (min-width: 600px) {
+
+    /* Two-column grid */
+    .grid-temple {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================
+   DESKTOP LAYOUT
+========================= */
+@media (min-width: 1200px) {
+
+    /* Hide hamburger menu */
+    .navbarToggle {
+        display: none;
+    }
+
+    /* Display navigation menu */
+    .navbar-menu {
+        position: absolute;
+        display: flex;
+        align-items: end;
+        justify-self: flex-end;
+    }
+
+    /* Three-column grid */
+    .grid-temple {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
