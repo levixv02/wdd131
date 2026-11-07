@@ -33,7 +33,7 @@ header {
 }
 
 /* Logo title */
-header h1 {
+header p {
     color: #bbd49b;
     font-size: 3rem;
     font-weight: bold;
