@@ -178,6 +178,10 @@ footer p {
 ========================= */
 @media (max-width: 1200px) {
 
+    header p.active {
+        display: none;
+    }
+
     /* Hamburger button */
    
     .navbarToggle {
@@ -214,6 +218,12 @@ footer p {
         transition: .3s ease-in-out;
     }
 
+    .navbarToggle.active{
+        position: absolute;
+        right: 10%;
+        top: 10px;
+    }
+
     .navbarToggle.active::after{
         box-shadow: 0 0 0 black;
         transform: rotate(45deg)
@@ -225,22 +235,28 @@ footer p {
 
     .navbar-menu {
         display: none;
-        position: absolute;
-        top: 70px;
-        left: 98%;
-        background-color: rgb(48, 48, 113);
+        /* position: absolute; */
+        top: 10px;
+        left: 50%;
+        /* background-color: rgb(48, 48, 113); */
         border-radius: 8px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); */
         min-width: 220px;
         z-index: 999;
         transition: .3s ease-in-out;
     
     }
 
+
     /* Show menu when active */
     .navbar-menu.active {
-        display: flex;
+        display:flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        width: 100%;
     }
 
 }
@@ -251,11 +267,6 @@ footer p {
     }
 
     /* Logo title */
-    header h1 {
-        color: #bbd49b;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
 
     .navbar-menu li a{
         padding: 0;
