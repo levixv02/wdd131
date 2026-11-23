@@ -1,0 +1,29 @@
+@media (min-width:600px){
+
+    .grid-temple{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .navbarToggle{
+        display:none;
+    }
+
+    .navbar-menu{
+        display:flex;
+        flex-direction:row;
+        gap:1rem;
+
+        position:static;
+        background:none;
+        padding:0;
+    }
+
+    .grid-temple{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
