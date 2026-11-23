@@ -435,14 +435,16 @@
 
     <div class="footer-bottom">
         <p>
-            &copy; <span id="currentyear"></span> Explore DRCongo | Lévi Tshipamba
+            &copy; <span class="currentyear"></span> Explore DRCongo | Lévi Tshipamba
         </p>
     </div>
     </footer>
 
     <script>
-        document.querySelector("#currentyear").textContent =
-            new Date().getFullYear();
+        const year = new Date().getFullYear();
+        document.querySelectorAll(".currentyear").forEach(item => {
+            item.textContent = year;
+        });
     </script>
 
 </body>
